@@ -1,22 +1,66 @@
 {
   "name": "app-main",
   "version": "1.0.0",
+  "type": "module",
   "main": "index.ts",
   "scripts": {
     "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web"
+    "android": "expo run:android",
+    "ios": "expo run:ios",
+    "web": "expo start --web",
+    "lint": "eslint . --ext .ts,.tsx",
+    "format": "prettier --write .",
+    "test": "jest --watchAll",
+    "test:coverage": "jest --coverage",
+    "prepare": "husky"
   },
   "dependencies": {
+    "@react-navigation/bottom-tabs": "^7.4.7",
+    "@react-navigation/native": "^7.1.17",
+    "@react-navigation/native-stack": "^7.3.26",
+    "@reduxjs/toolkit": "^2.9.0",
     "expo": "~54.0.10",
     "expo-status-bar": "~3.0.8",
     "react": "19.1.0",
-    "react-native": "0.81.4"
+    "react-native": "0.81.4",
+    "react-native-safe-area-context": "^5.6.1",
+    "react-native-screens": "^4.16.0",
+    "react-redux": "^9.2.0"
   },
   "devDependencies": {
+    "@eslint/js": "^9.36.0",
+    "@testing-library/jest-native": "^5.4.3",
+    "@testing-library/react-native": "^13.3.3",
+    "@types/jest": "^30.0.0",
     "@types/react": "~19.1.0",
-    "typescript": "~5.9.2"
+    "@types/react-test-renderer": "^19.1.0",
+    "@typescript-eslint/eslint-plugin": "^8.44.1",
+    "@typescript-eslint/parser": "^8.44.1",
+    "babel-plugin-module-resolver": "^5.0.2",
+    "babel-preset-expo": "^54.0.3",
+    "eslint": "^9.36.0",
+    "eslint-config-airbnb-typescript": "^18.0.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "husky": "^9.1.7",
+    "jest": "^30.2.0",
+    "lint-staged": "^16.2.3",
+    "prettier": "^3.6.2",
+    "react-test-renderer": "^19.1.0",
+    "typescript": "~5.9.2",
+    "typescript-eslint": "^8.44.1"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "eslint --fix"
+    ],
+    "tests/**/*.{ts,tsx}": [
+      "eslint --fix"
+    ]
   },
   "private": true
 }
