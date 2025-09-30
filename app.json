@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "App-main",
-    "slug": "App-main",
+    "name": "UniConnect",
+    "slug": "UniConnect",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
