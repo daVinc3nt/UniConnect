@@ -1,300 +1,279 @@
-# MyAwesomeApp
+# UniConnect
 
-A professional React Native application built with Expo, featuring TypeScript, React Navigation, comprehensive testing, and modern development tools.
+Ứng dụng React Native được xây dựng với Expo, TypeScript và Redux Toolkit để kết nối sinh viên đại học.
 
-## 🚀 Features
+## 🚀 Công nghệ sử dụng
 
-- **React Native + Expo SDK**: Latest Expo SDK with TypeScript template
-- **Navigation**: React Navigation with stack and bottom tabs
-- **State Management**: Redux Toolkit for predictable state management
-- **Type Safety**: Full TypeScript support with strict configuration
-- **Testing**: Jest + React Native Testing Library with coverage reports
-- **Code Quality**: ESLint + Prettier with Airbnb style guide
-- **Git Hooks**: Husky + lint-staged for pre-commit validation
-- **Absolute Imports**: Clean import paths with `@/` alias
+- **React Native** - Framework phát triển ứng dụng di động đa nền tảng
+- **Expo** - Nền tảng phát triển React Native
+- **TypeScript** - Ngôn ngữ lập trình với kiểu dữ liệu tĩnh
+- **Redux Toolkit** - Quản lý state toàn ứng dụng
+- **React Navigation** - Điều hướng trong ứng dụng
+- **Jest** - Framework testing
+- **ESLint + Prettier** - Code linting và formatting
+- **Husky** - Git hooks để đảm bảo chất lượng code
 
-## 📋 Prerequisites
-
-Before you begin, ensure you have the following installed:
-
-- [Node.js](https://nodejs.org/) (version 18 or higher)
-- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
-- [Expo CLI](https://docs.expo.dev/get-started/installation/)
-- For iOS development: [Xcode](https://developer.apple.com/xcode/)
-- For Android development: [Android Studio](https://developer.android.com/studio)
-
-## 🛠️ Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone <repository-url>
-   cd MyAwesomeApp
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Set up Git hooks**
-   ```bash
-   npm run prepare
-   ```
-
-## 🏃‍♂️ Running the Application
-
-### Development Server
-
-Start the Expo development server:
-
-```bash
-npm start
-```
-
-This will open the Expo DevTools in your browser where you can:
-- Scan the QR code with the Expo Go app on your mobile device
-- Press `i` to open in iOS Simulator
-- Press `a` to open in Android Emulator
-- Press `w` to open in web browser
-
-### Platform-Specific Commands
-
-**iOS Simulator:**
-```bash
-npm run ios
-```
-
-**Android Emulator:**
-```bash
-npm run android
-```
-
-**Web Browser:**
-```bash
-npm run web
-```
-
-## 🧪 Testing
-
-### Running Tests
-
-**Watch mode (recommended for development):**
-```bash
-npm test
-```
-
-**Single run:**
-```bash
-npm run test:coverage
-```
-
-### Test Coverage
-
-Generate and view test coverage reports:
-```bash
-npm run test:coverage
-```
-
-Coverage reports will be generated in the `coverage/` directory.
-
-### Test Structure
+## 📁 Cấu trúc thư mục
 
 ```
-src/
-├── components/tests/          # Component unit tests
-├── screens/tests/             # Screen component tests
-├── services/tests/            # Service layer tests
-├── store/tests/               # Redux store tests
-└── navigation/tests/          # Navigation tests
-
-tests/
-└── integration/               # Integration tests
-```
-
-## 🎨 Code Style & Linting
-
-### Linting
-
-Check for linting errors:
-```bash
-npm run lint
-```
-
-### Formatting
-
-Format code with Prettier:
-```bash
-npm run format
-```
-
-### Pre-commit Hooks
-
-The project uses Husky and lint-staged to ensure code quality:
-
-- **ESLint**: Checks for code quality and potential errors
-- **Prettier**: Ensures consistent code formatting
-- **Jest**: Runs related tests for changed files
-
-These checks run automatically on every commit.
-
-## 📁 Project Structure
-
-```
-MyAwesomeApp/
-├── app.json                   # Expo configuration
-├── package.json              # Dependencies and scripts
-├── tsconfig.json             # TypeScript configuration
-├── babel.config.js           # Babel configuration
-├── jest.config.js            # Jest testing configuration
-├── .eslintrc.js              # ESLint configuration
-├── .prettierrc.js            # Prettier configuration
+UniConnect/
 ├── src/
-│   ├── components/           # Reusable UI components
+│   ├── components/          # Các component tái sử dụng
 │   │   ├── CustomButton.tsx
 │   │   └── tests/
-│   ├── screens/              # Screen components
+│   ├── hooks/              # Custom hooks
+│   │   └── useAuth.ts
+│   ├── navigation/         # Cấu hình điều hướng
+│   │   ├── AppNavigator.tsx
+│   │   └── tests/
+│   ├── screens/           # Các màn hình chính
 │   │   ├── HomeScreen.tsx
 │   │   ├── ProfileScreen.tsx
 │   │   ├── SettingsScreen.tsx
 │   │   └── tests/
-│   ├── navigation/           # Navigation configuration
-│   │   ├── AppNavigator.tsx
-│   │   └── tests/
-│   ├── hooks/                # Custom React hooks
-│   │   └── useAuth.ts
-│   ├── services/             # API and external services
+│   ├── services/          # API calls và external services
 │   │   ├── api.ts
 │   │   └── tests/
-│   ├── store/                # Redux store configuration
+│   ├── store/            # Redux store configuration
 │   │   ├── index.ts
 │   │   ├── userSlice.ts
 │   │   └── tests/
-│   └── types/                # TypeScript type definitions
+│   └── types/           # TypeScript type definitions
 │       └── global.d.ts
-├── tests/
-│   └── integration/          # Integration tests
-└── .husky/                   # Git hooks
+├── tests/              # Integration tests
+│   └── integration/
+├── assets/            # Hình ảnh, fonts, etc.
+├── .husky/           # Git hooks
+├── .vscode/          # VS Code configuration
+└── config files      # Babel, Jest, ESLint, etc.
 ```
 
-## 🔧 Configuration
+## 🛠️ Cài đặt và chạy ứng dụng
 
-### Absolute Imports
+### Yêu cầu hệ thống
 
-The project is configured to use absolute imports with the `@/` alias:
+- Node.js >= 18
+- npm hoặc yarn
+- Expo CLI
+- iOS Simulator (cho macOS) hoặc Android Emulator
 
-```typescript
-// Instead of
-import { CustomButton } from '../../../components/CustomButton';
-
-// Use
-import { CustomButton } from '@/components/CustomButton';
-```
-
-### Environment Variables
-
-Create a `.env` file in the root directory for environment-specific variables:
-
-```env
-API_BASE_URL=https://api.example.com
-```
-
-## 📱 Screens
-
-### Home Screen
-- Displays welcome message
-- Shows user information when authenticated
-- Navigation to other sections
-
-### Profile Screen
-- User profile information
-- Avatar display
-- Edit profile functionality
-
-### Settings Screen
-- App preferences (notifications, dark mode, etc.)
-- Version information
-- Settings persistence
-
-## 🔄 State Management
-
-The app uses Redux Toolkit for state management:
-
-- **User Slice**: Manages user authentication and profile data
-- **Type-safe**: Full TypeScript integration
-- **DevTools**: Redux DevTools extension support
-
-## 🚀 Deployment
-
-### Building for Production
-
-**iOS:**
-```bash
-expo build:ios
-```
-
-**Android:**
-```bash
-expo build:android
-```
-
-### Publishing Updates
+### Cài đặt dependencies
 
 ```bash
-expo publish
+# Clone repository
+git clone https://github.com/daVinc3nt/UniConnect.git
+cd UniConnect
+
+# Cài đặt dependencies
+npm install
+
+# Cài đặt Expo CLI (nếu chưa có)
+npm install -g expo-cli
 ```
+
+### Chạy ứng dụng
+
+```bash
+# Khởi động development server
+npm start
+
+# Chạy trên iOS simulator
+npm run ios
+
+# Chạy trên Android emulator
+npm run android
+
+# Chạy trên web browser
+npm run web
+```
+
+### Development Scripts
+
+```bash
+# Linting
+npm run lint              # Kiểm tra code với ESLint
+npm run format           # Format code với Prettier
+
+# Testing
+npm test                 # Chạy tests với watch mode
+npm run test:coverage    # Chạy tests và tạo coverage report
+
+# Build
+npm start               # Start Expo development server
+```
+
+## 📝 Coding Standards
+
+### TypeScript
+
+- Sử dụng TypeScript cho tất cả các file (.ts, .tsx)
+- Định nghĩa types trong `src/types/`
+- Sử dụng interface cho object types
+- Tránh sử dụng `any`, thay vào đó dùng `unknown` hoặc định nghĩa type cụ thể
+
+### Naming Conventions
+
+- **Components**: PascalCase (`CustomButton.tsx`)
+- **Files/Folders**: camelCase (`userSlice.ts`)
+- **Constants**: UPPER_SNAKE_CASE (`API_BASE_URL`)
+- **Functions**: camelCase (`getUserProfile`)
+
+### File Organization
+
+- Mỗi component có file test riêng trong thư mục `tests/`
+- Export components từ index files
+- Sử dụng absolute imports với alias `@/` (trỏ đến `src/`)
+
+## 🧪 Testing
+
+### Unit Tests
+
+- Sử dụng Jest và React Native Testing Library
+- Test file naming: `ComponentName.test.tsx`
+- Test tất cả components, hooks, và utility functions
+
+### Integration Tests
+
+- Đặt trong thư mục `tests/integration/`
+- Test luồng navigation và tương tác giữa components
+
+## 🔧 Development Tools
+
+### ESLint Configuration
+
+- ESLint v9 với flat config format
+- TypeScript support
+- React và React Hooks rules
+- Prettier integration
+
+### Pre-commit Hooks
+
+- Husky chạy lint-staged
+- Tự động lint và format code trước khi commit
+- Chỉ chạy trên staged files để tối ưu performance
+
+### 🔄 Luồng Commit Process
+
+Khi bạn chạy `git commit`, hệ thống sẽ tự động thực hiện các bước sau:
+
+#### 1. Pre-commit Hook Trigger
+```bash
+.husky/pre-commit → npx lint-staged
+```
+
+#### 2. Lint-staged Configuration (package.json)
+```json
+"lint-staged": {
+  "src/**/*.{ts,tsx}": ["eslint --fix"],
+  "tests/**/*.{ts,tsx}": ["eslint --fix"]
+}
+```
+
+#### 3. Files Processing Flow
+
+**Bước 1: Phát hiện staged files**
+- Git kiểm tra tất cả files đã staged
+- Lint-staged filter theo pattern matching
+
+**Bước 2: Chạy ESLint trên TypeScript files**
+```
+src/components/*.tsx     → ESLint check & auto-fix
+src/screens/*.tsx        → ESLint check & auto-fix  
+src/hooks/*.ts           → ESLint check & auto-fix
+src/services/*.ts        → ESLint check & auto-fix
+src/store/*.ts           → ESLint check & auto-fix
+tests/**/*.tsx          → ESLint check & auto-fix
+```
+
+**Bước 3: ESLint Configuration Applied**
+- `eslint.config.js` được load
+- Rules từ TypeScript, React, React Hooks
+- Tự động fix các lỗi có thể sửa được
+- Báo lỗi nếu có issues không thể tự fix
+
+#### 4. Success/Failure Scenarios
+
+**✅ Commit thành công khi:**
+- Tất cả ESLint rules pass
+- Không có lỗi syntax
+- Không có unused variables
+- Code style consistent
+
+**❌ Commit bị reject khi:**
+- ESLint errors không thể auto-fix
+- TypeScript compilation errors
+- Lint rules violations
+
+#### 5. Debugging Commit Issues
+
+Nếu commit fail, kiểm tra:
+
+```bash
+# Chạy ESLint manually để debug
+npm run lint
+
+# Kiểm tra specific file
+npx eslint src/components/YourComponent.tsx
+
+# Xem staged files
+git diff --cached --name-only
+
+# Reset và stage lại sau fix
+git add .
+git commit -m "your message"
+```
+
+#### 6. Files Được Process
+
+**Luôn được check:**
+- `src/**/*.ts` - TypeScript files
+- `src/**/*.tsx` - React TypeScript components
+- `tests/**/*.ts` - Test files
+- `tests/**/*.tsx` - Component test files
+
+**Được ignore:**
+- `*.cjs` files (config files)
+- `coverage/` directory  
+- `node_modules/`
+- `.expo/` directory
+- Generated files
+
+**Config files flow:**
+```
+eslint.config.js     → ESLint configuration
+babel.config.cjs     → Babel transpilation
+jest.config.cjs      → Test configuration
+.prettierrc.cjs      → Code formatting rules
+```
+
+### VS Code Settings
+
+- Tự động format on save
+- ESLint integration
+- TypeScript support với strict mode
+
 
 ## 🤝 Contributing
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+1. Fork repository
+2. Tạo feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit changes (`git commit -m 'Add amazing feature'`)
+4. Push to branch (`git push origin feature/amazing-feature`)
+5. Tạo Pull Request
 
-### Development Workflow
+### Quy tắc Commit
 
-1. **Before coding**: Run `npm test` to ensure all tests pass
-2. **During development**: Use `npm start` for hot reloading
-3. **Before committing**: Pre-commit hooks will automatically run linting and tests
-4. **Code review**: Ensure all CI checks pass
+- Sử dụng tiếng Anh cho commit messages
+- Format: `type: description`
+- Types: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`
 
-## 📚 Documentation
-
-- [Expo Documentation](https://docs.expo.dev/)
-- [React Navigation](https://reactnavigation.org/)
-- [Redux Toolkit](https://redux-toolkit.js.org/)
-- [Testing Library](https://testing-library.com/docs/react-native-testing-library/intro/)
-
-## 🐛 Troubleshooting
-
-### Common Issues
-
-**Metro bundler issues:**
-```bash
-npx expo start --clear
+Example:
 ```
-
-**iOS Simulator not opening:**
-- Ensure Xcode is installed and updated
-- Check iOS Simulator is available
-
-**Android Emulator not starting:**
-- Verify Android Studio installation
-- Check AVD (Android Virtual Device) configuration
-
-**Dependency conflicts:**
-```bash
-rm -rf node_modules package-lock.json
-npm install
+feat: add user authentication
+fix: resolve navigation stack overflow
+docs: update README with setup instructions
 ```
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 👏 Acknowledgments
-
-- [Expo](https://expo.dev/) for the amazing development platform
-- [React Navigation](https://reactnavigation.org/) for navigation solutions
-- [Testing Library](https://testing-library.com/) for testing utilities
-- [Airbnb](https://github.com/airbnb/javascript) for the style guide
+This project is licensed under the MIT License.
